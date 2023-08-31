@@ -60,4 +60,10 @@ export default {
       validation: (Rule) => Rule.unique(), // 중복 x
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'username',
+    },
+  },
 }
