@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import AuthContext from '@/contexts/AuthContext';
 import { createClient } from 'next-sanity';
+import SWRConfigContext from '@/contexts/SWRConfigContext';
 const openSans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -24,7 +25,9 @@ export default function RootLayout({
           <header className="sticky top-0 bg-white z-10 border-b">
             <Navbar />
           </header>
-          <main>{children}</main>
+          <main>
+            <SWRConfigContext>{children}</SWRConfigContext>
+          </main>
         </AuthContext>
       </body>
     </html>
